@@ -21,7 +21,5 @@
 		"vite": "^4.4.2"
 	},
 	"type": "module",
-	"dependencies": {
-		"@openzeppelin/contracts": "^5.0.0"
-	}
+	"dependencies": {}
 }
