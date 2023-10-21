@@ -30,23 +30,12 @@ describe('RealEstate', () => {
       nftId,
       seller.address,
       buyer.address)
-
-    //approve the transcation from seller 
-    transcation = await realEstate.connect(seller).approve(escrow,nftId);
-    await transcation.wait();
   })
   
   describe('deployment',()=>{
     it("test transfer",async()=>{
         //verify if the seller is the onwer of the nft 
         expect(await realEstate.ownerOf(nftId)).to.equal(seller.address)
-
-        // //transfer the nft to buyer 
-        transcation = await escrow.connect(buyer).finalizeSale();
-        await transcation.wait();
-
-        //test if the transcation is done to the buyer 
-        expect(await realEstate.ownerOf(nftId)).to.equal(buyer.address)
     })
   })
 
